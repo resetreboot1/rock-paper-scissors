@@ -31,9 +31,7 @@ function distritbutePoints() {
   }
 }
 
-function playGame() {
-    
-    choice = prompt("Choose: Rock, Paper or Scissors"); 
+function playGame(choice) {
      properChoice = choice.toLowerCase();
      compChoice = Math.random();
      getComputerChoice()
