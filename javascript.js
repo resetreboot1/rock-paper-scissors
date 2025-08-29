@@ -1,3 +1,7 @@
+let playerPoints = 0;
+let ComputerPoints = 0;
+let playerChoice;
+
 function getComputerChoice() {
    if (compChoice <= 0.33) {
     return "rock"
@@ -9,33 +13,31 @@ function getComputerChoice() {
    
 }
 
-function pointDistributor() {
-       if ((properChoice === "rock" && getComputerChoice() === "scissors")
+function distritbutePoints() {
+  if ((properChoice === "rock" && getComputerChoice() === "scissors")
        || (properChoice === "scissors" && getComputerChoice() === "paper")
        || (properChoice === "paper" && getComputerChoice() === "rock" )) {
-        ++playerPoints
-      }else if ((properChoice === "rock" && getComputerChoice() === "paper")
+       ++playerPoints
+  }
+  else if ((properChoice === "rock" && getComputerChoice() === "paper")
           || (properChoice === "paper" && getComputerChoice() === "scissors")
           || (properChoice === "scissors" && getComputerChoice() === "rock")) {
-            ++ComputerPoints
-         }else if (properChoice === getComputerChoice()) {
-            }
-            else {
-                return console.log("error. Try again.")
-            }
-        }
-
-let playerPoints = 0;
-let ComputerPoints = 0;
-let properChoice;
+          ++ComputerPoints
+  }
+  else if (properChoice === getComputerChoice()) {
+  }
+  else {
+        return console.log("error. Try again.")
+  }
+}
 
 function playGame() {
     
-    choice = prompt("Choose: Rock, Paper or Scissors");
+    choice = prompt("Choose: Rock, Paper or Scissors"); 
      properChoice = choice.toLowerCase();
      compChoice = Math.random();
      getComputerChoice()
-     pointDistributor()
+     distritbutePoints()
          if (playerPoints === 3) {
          return console.log("congrats Player. You win.")
           }else if (ComputerPoints === 3) {
