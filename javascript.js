@@ -13,7 +13,7 @@ function getComputerChoice() {
    
 }
 
-function distritbutePoints() {
+function distritbutePoints(properChoice) {
   if ((properChoice === "rock" && getComputerChoice() === "scissors")
        || (properChoice === "scissors" && getComputerChoice() === "paper")
        || (properChoice === "paper" && getComputerChoice() === "rock" )) {
@@ -31,11 +31,10 @@ function distritbutePoints() {
   }
 }
 
-function playGame(choice) {
-     properChoice = choice.toLowerCase();
+function playGame(properChoice) {
      compChoice = Math.random();
      getComputerChoice()
-     distritbutePoints()
+     distritbutePoints(properChoice)
          if (playerPoints === 3) {
          return console.log("congrats Player. You win.")
           }else if (ComputerPoints === 3) {
@@ -44,6 +43,22 @@ function playGame(choice) {
            return console.log("Player Points: " + playerPoints + ", " + "Computer Points: " + ComputerPoints);
           }
         }
+
+
+
+let rock = document.querySelector(".rock")
+let paper = document.querySelector(".paper")
+let scissors = document.querySelector(".scissors")
+let container = document.querySelector(".button-container")
+
+let Choice;
+container.addEventListener("click", (e) =>  Choice = (e.target.textContent))
+
+
+
+
+
+
 
 
 
