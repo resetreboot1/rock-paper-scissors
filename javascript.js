@@ -51,8 +51,15 @@ let paper = document.querySelector(".paper")
 let scissors = document.querySelector(".scissors")
 let container = document.querySelector(".button-container")
 
-let Choice;
-container.addEventListener("click", (e) =>  Choice = (e.target.textContent))
+let choice;
+container.addEventListener("click", (e) => {
+  choice = (e.target.textContent)
+  if (choice === "rock"   ||
+      choice === "paper"  ||
+      choice === "scissors") {
+      playGame(choice)
+    }
+})
 
 
 
